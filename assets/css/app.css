@@ -1,0 +1,10 @@
+/* This file is for your main application css. */
+
+body {
+  font-family: sans-serif;
+}
+
+.selected {
+  color: blue;
+  text-decoration: underline;
+}

@@ -1,0 +1,13 @@
+<section>
+  <div id="mainimg"><%= @piece.extern_id %>.jpg</div>
+  <p id="info">
+    <span id="title"><%= @piece.title %></span>
+    by
+    <span id="artist"><%= @piece.artist.name %></span>
+    <br/>
+    <span id="description"><%= @piece.description %></span>
+  </p>
+  <div id="currentbid">
+    Bid: <span id="bid"><%= @bid %></span>
+  </div>
+</section>

@@ -1,0 +1,8 @@
+<section>
+  <%= for item <- @data do %>
+    <div id="art_<%= item.id %>" class="<%= if item.id == @current_id do "selected " else "" end %>clickable" >
+      <span>  <%= item.extern_id %>.jpg  (<%= item.id %>) </span>
+      <span> <%= item.title %> by <%= item.artist.name %></span>
+    </div>
+  <% end %>
+</section>
