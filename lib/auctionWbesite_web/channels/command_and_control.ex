@@ -26,11 +26,11 @@ defmodule AuctionWbesiteWeb.CommandAndControl do
     query = from u in Art, where: u.id == ^new_id
     result = Repo.one(query) |> Repo.preload(:artist)
 
-    return = %{id: id, title: result.title, description: result.description, artist: result.artist.name, bid: result.current_bid, extern: result.extern_id }
-    broadcast!(socket, "new_art", return)
-
     Store.set_art_id(new_id)
     Store.set_current_bid(result.current_bid)
+
+    return = %{id: id, title: result.title, description: result.description, artist: result.artist.name, bid: result.current_bid, extern: result.extern_id }
+    broadcast!(socket, "new_art", return)
 
     {:noreply, socket}
   end
