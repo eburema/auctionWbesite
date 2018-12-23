@@ -4,6 +4,43 @@ body {
   font-family: sans-serif;
 }
 
+body[view='page'] {
+  background-color: black;
+  color: white;
+
+}
+
+section#obs-view {
+  display: flex;
+  flex-direction: row;
+}
+
+div#info {
+  font-size: 26pt;
+  max-width: 300px;
+}
+
+section#currentbid {
+  font-size: 40pt;
+}
+
+section#gallery {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.clickable {
+  border-style: solid;
+  border-width: 1px;
+  margin: 2px;
+  padding: 2px;
+}
+
+.clickable:hover {
+  background-color: #eee;
+}
+
 .selected {
   color: blue;
   text-decoration: underline;
