@@ -7,10 +7,10 @@
     </p>
     <p id="description"><%= @piece.description %></p>
   </div>
-  <div>
-  <img id="mainimg" src='<%= Routes.static_path(@conn, "/images/" <> @piece.extern_id <> ".jpg") %>' />
-</div>
-</section>
-<section id="currentbid">
-  Bid: <span id="bid"><%= @bid %></span>
+  <div id='mainimg'>
+    <img src='<%= Routes.static_path(@conn, "/images/" <> @piece.extern_id <> ".jpg") %>' />
+  </div>
+  <p id="currentbid">
+    Bid: <span id="bid"><%= @bid %></span>
+  </p>
 </section>

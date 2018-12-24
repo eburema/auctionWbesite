@@ -4,24 +4,55 @@ body {
   font-family: sans-serif;
 }
 
+main {
+  display: inline;
+}
+
 body[view='page'] {
+
   background-color: black;
   color: white;
 
 }
 
 section#obs-view {
+  height: 1080px;
+  width:  1920px;
+  display: grid;
+
+  grid-template-areas:
+    'info mainimg mainimg mainimg'
+    'currentbid currentbid . .';
+
+  align-content: space-between;
+
+  /*
+  grid-template-columns: 400px auto;
+  grid-auto-rows: 900px auto;
+  */
+}
+
+div#mainimg {
+  grid-area: mainimg;
   display: flex;
-  flex-direction: row;
+  align-content: center;
+  align-items: center;
+}
+
+div#mainimg > img {
+  margin: auto;
 }
 
 div#info {
+  grid-area: info;
   font-size: 26pt;
   max-width: 300px;
 }
 
-section#currentbid {
+p#currentbid {
+  grid-area: currentbid;
   font-size: 40pt;
+  grid-column: 1 / 2;
 }
 
 section#gallery {
