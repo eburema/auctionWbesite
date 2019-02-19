@@ -15,6 +15,7 @@ defmodule AuctionWbesiteWeb.Router do
     get "/", PageController, :index
     get "/gallery", GalleryController, :index
     get "/bid", BidController, :index
+    get "/dump", PageController, :dump
   end
 
 end

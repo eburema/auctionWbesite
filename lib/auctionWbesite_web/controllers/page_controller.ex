@@ -20,4 +20,17 @@ defmodule AuctionWbesiteWeb.PageController do
     |> assign(:bid, cur_bid)
     |> render("index.html")
   end
+
+  def dump(conn, _params) do
+    query = from u in Art,
+              join: c in Artist,
+              where: (c.id == u.artist_id),
+              select: %{id: u.extern_id, title: u.title, bid: u.current_bid, bidder: u.bidder, artist: c.name}
+
+    result = Repo.all(query)
+
+    conn
+    |> assign(:dump, result)
+    |> render("dump.html")
+  end
 end
