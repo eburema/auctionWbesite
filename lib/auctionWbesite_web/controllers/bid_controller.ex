@@ -12,6 +12,7 @@ defmodule AuctionWbesiteWeb.BidController do
     conn
     |> assign(:bid, current_bid)
     |> assign(:title, cur_art.title)
+    |> assign(:bidder, cur_art.bidder)
     |> render("index.html")
   end
 end

@@ -3,6 +3,7 @@
     Current bid for <span id="title"><%= @title %></span>: <span id="current_bid"><%= @bid %></span>
   </div>
   <div>
-    Enter Bid here and press enter: <input id="new_bid" type="text"></input>
+    Enter Bid here and press enter: <input id="new_bid" type="text"></input><br />
+    At end enter highest bidder here and press enter <input id="bidder" type="text"><%= @bidder %></input>
   </div>
 </section>

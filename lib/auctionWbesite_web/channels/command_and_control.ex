@@ -29,7 +29,7 @@ defmodule AuctionWbesiteWeb.CommandAndControl do
     Store.set_art_id(new_id)
     Store.set_current_bid(result.current_bid)
 
-    return = %{id: id, title: result.title, description: result.description, artist: result.artist.name, bid: result.current_bid, extern: result.extern_id }
+    return = %{id: id, title: result.title, description: result.description, artist: result.artist.name, bid: result.current_bid, extern: result.extern_id, bidder: result.bidder }
     broadcast!(socket, "new_art", return)
 
     {:noreply, socket}
@@ -43,4 +43,15 @@ defmodule AuctionWbesiteWeb.CommandAndControl do
     {:noreply, socket}
   end
 
+  def handle_in("new_bidder", %{"bidder" => new_bidder}, socket) do
+    art_id = Store.get_art_id()
+
+    Repo.get_by(Art, id: art_id)
+    |> Ecto.Changeset.change(%{bidder: new_bidder})
+    |> Repo.update()
+
+    broadcast!(socket, "new_bidder", %{bidder: new_bidder})
+
+    {:noreply, socket}
+  end
 end

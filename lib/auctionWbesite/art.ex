@@ -9,6 +9,7 @@ defmodule AuctionWbesite.Art do
     field :title, :string
     field :extern_id, :string
     field :artist_id, :id
+    field :bidder, :string
     belongs_to :artist, AuctionWbesite.Artist, define_field: false
 
     timestamps()
