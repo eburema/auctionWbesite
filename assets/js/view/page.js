@@ -8,7 +8,7 @@ let bid = document.getElementById('bid')
 
 
 channel.on("new_art", payload => {
-    document.getElementById('mainimg').textContent= payload.extern
+    document.getElementById('mainimg').src = '/images/' + payload.extern + '.jpg'
     document.getElementById('title').textContent= payload.title
     document.getElementById('artist').textContent= payload.artist
     document.getElementById('description').textContent= payload.description

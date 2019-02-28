@@ -5,6 +5,7 @@ defmodule AuctionWbesite.Agent do
 
   def start_link(_empty) do
     start_art = Repo.get_by(Art, id: 1)
+    #start_art = %{current_bid: 1}
 
     Agent.start_link(fn -> {1, start_art.current_bid} end, name: __MODULE__)
   end

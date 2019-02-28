@@ -7,8 +7,8 @@
     </p>
     <p id="description"><%= @piece.description %></p>
   </div>
-  <div id='mainimg'>
-    <img src='<%= Routes.static_path(@conn, "/images/" <> @piece.extern_id <> ".jpg") %>' />
+  <div id='imgcontainer'>
+    <img id='mainimg' src='<%= Routes.static_path(@conn, "/images/" <> @piece.extern_id <> ".jpg") %>' width='800px' />
   </div>
   <p id="currentbid">
     Bid: <span id="bid"><%= @bid %></span>

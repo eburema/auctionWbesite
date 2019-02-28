@@ -37,15 +37,19 @@ section#obs-view {
   */
 }
 
-div#mainimg {
+div#imgcontainer {
   grid-area: mainimg;
   display: flex;
   align-content: center;
   align-items: center;
+  max-width: 750px;
+  max-height: 750px
 }
 
-div#mainimg > img {
+div#imgcontainer > img {
   margin: auto;
+  max-height: 100%;
+  max-width: 100%;
 }
 
 div#info {
