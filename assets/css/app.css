@@ -42,14 +42,11 @@ div#imgcontainer {
   display: flex;
   align-content: center;
   align-items: center;
-  max-width: 750px;
-  max-height: 750px
 }
 
 div#imgcontainer > img {
   margin: auto;
-  max-height: 100%;
-  max-width: 100%;
+  max-height: 900px;
 }
 
 div#info {
